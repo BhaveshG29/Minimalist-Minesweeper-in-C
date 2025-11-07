@@ -7,6 +7,8 @@ extern bool GameOn;
 extern int Gamearr[10][10];
 extern int k;
 
+void replay();
+
 extern int r,c;
 void player_input();
 
@@ -15,4 +17,5 @@ void equalizing_arr();
 int no_of_bombs(int y);
 void placing_bombs();
 
+void marking_bombs();
 #endif
