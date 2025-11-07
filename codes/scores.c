@@ -68,7 +68,7 @@ save = fopen("../scores.dat", "w");
 }
 
 
-if(current_score >= 50) fprintf(save,"%d\n", current_score);
+if(current_score >= 100) fprintf(save,"%d\n", current_score);
 fclose(save);
 
 printf("\n\nThank You for playing\n\n");
