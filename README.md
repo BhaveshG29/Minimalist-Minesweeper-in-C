@@ -59,10 +59,10 @@ make run
    - **Bomb** (💣): Mine cell - reveals on your move → Game Over
 
 4. **Using the Hint System**:
-   - Press `H` (or the designated hint key) to reveal the count of adjacent mines around a specific cell
+   - Press Red Dots reveal there are adjacent mines around a specific cell
    - Each hint provides strategic information about nearby bombs
    - Hints help you make safer decisions in the game
-   - Limited hints may be available depending on game configuration
+
 
 5. **Replay Option**:
    - After game ends (win or loss), choose to play again without exiting
