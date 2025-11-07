@@ -13,6 +13,24 @@ int Gamearr[10][10];
 //No. of Bombs
 int k;
 
+char s[10];
+
+//Asks the play if he/she wants to replay the game.
+void replay(){
+printf("Type 'yes' to play again:");
+scanf("%s", s);
+//fgets(s,sizeof(s), stdin);
+ s[strcspn(s, "\n")] = 0;
+if(strcmp(s,"yes")==0 || strcmp(s,"Yes")==0 || strcmp(s,"y")==0 || strcmp(s,"Y")==0 || strcmp(s,"YES")==0){
+int ret5 = system("clear");
+int ret6 = system("make run");
+}
+else{ 
+	int ret7 = system("make clean");
+	printf("Thank You for Playing!\n");
+}
+}
+
 //User Input Variables
 int r,c;
 //Function for Scanning User Input
@@ -71,11 +89,39 @@ k = no_of_bombs(0);
         int j = (rand() % 10);
 	
 	if(l==(k-1)){
-		Gamearr[i][j] = 3;
+		Gamearr[i][j] = 3; //Cherry
 	}
 
-	else Gamearr[i][j] = 2;
+	else Gamearr[i][j] = 2; //Bombs
     }
 }
 
+//Showing Red Dots if there is a bomb near that dot. Can be on the diagonal, ahead/back/up/down.
+void marking_bombs() {
+    int i, j, x, y;
+    
+    for (i = 0; i < 10; i++) {
+        for (j = 0; j < 10; j++) {
+            if (Gamearr[i][j] == 2) {
+                
+                int directions[8][2] = {
+                    {-1, -1}, {-1, 0}, {-1, 1},  // Top-left, Top, Top-right
+                    {0, -1},   /*aij */    {0, 1},    // Left, Right
+                    {1, -1},  {1, 0},  {1, 1}     // Bottom-left, Bottom, Bottom-right
+                };
+                
+                for (int k = 0; k < 8; k++) {
+                    x = i + directions[k][0];
+                    y = j + directions[k][1];
+                    
+                    if (x >= 0 && x < 10 && y >= 0 && y < 10) {
+                if (Gamearr[x][y] != 2 && Gamearr[x][y] != 3) {
+                            Gamearr[x][y] = 4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 

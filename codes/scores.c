@@ -51,7 +51,7 @@ return maximum;
 //Simultaneously Updates the score
 void update_score(){
 
-if(Gamearr[r][c]==1) current_score += 10;
+if(Gamearr[r][c]==1 || Gamearr[r][c] == 4) current_score += 10;
 if(Gamearr[r][c]==3) current_score += 100;
 else current_score += 0;
 
@@ -67,7 +67,8 @@ if(save==NULL){
 save = fopen("../scores.dat", "w");
 }
 
-fprintf(save,"%d\n", current_score);
+
+if(current_score >= 50) fprintf(save,"%d\n", current_score);
 fclose(save);
 
 printf("\n\nThank You for playing\n\n");

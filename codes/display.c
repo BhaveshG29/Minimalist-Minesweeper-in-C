@@ -9,8 +9,8 @@
 char Bomb[] = u8"💣";
 char Cherry[] = u8"🍒";
 char Leaf[] = u8"🍀";
-char Dot[] = u8"●";
-
+char Dot[] = u8"⚪";
+char Red_Dot[] = u8"🔴";
 
 void initial_display(){
 int ret = system("clear");
@@ -35,6 +35,7 @@ printf("Bomb - %s -> Reveal a bomb and you lose the game instantly.\n",Bomb);
 printf("Cherry - %s -> Reveal a cherry to gain 100 bonus points!\n", Cherry);
 printf("Leaf - %s -> A covered cell on the board (default appearance).\n", Leaf);
 printf("Empty - %s -> Uncover an empty cell to earn 10 points.\n", Dot);
+printf("Threat - %s -> A marked danger zone adjacent to a bomb.\n", Red_Dot);
 printf("\n\n");
 }
 
@@ -47,6 +48,7 @@ if(arr[i][j]==0) printf("%s\t", Leaf);
 else if(arr[i][j]==1) printf("%s\t", Dot);
 else if(arr[i][j]==2) printf("%s\t", Bomb);
 else if(arr[i][j]==3) printf("%s\t", Cherry);
+else if(arr[i][j]==4) printf("%s\t",Red_Dot);
 else printf("X\t");
 }
 printf("\n\n");

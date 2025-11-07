@@ -9,6 +9,7 @@ int arr[10][10];
 // 1 for Dot
 // 2 for Bomb
 // 3 for Cherry
+// 4 for Red Dot
 
 void initial_Board(){
 
@@ -21,6 +22,6 @@ arr[i][j] = 0;
 
 //Updates the Board as the player inputs.
 void update_Board(int row, int col){
-
+marking_bombs();
 arr[row][col] = Gamearr[row][col];
 }

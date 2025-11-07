@@ -26,10 +26,14 @@ update_score();
 display();
 }
 
-else if(((r<0 || r>9) || (c<0 || c>9)) || (arr[r][c] ==1 || arr[r][c] == 2)){
+else if(((r<0 || r>9) || (c<0 || c>9)) || (arr[r][c] ==1 || arr[r][c] == 2 || arr[r][c] == 4)){
 printf("Plese Enter Valid Values of row and column!!\n\n");
 }
 
+}
+
+if(!GameOn){
+replay();
 }
 
 return 0;
